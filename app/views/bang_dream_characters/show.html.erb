@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bang_dream_character.name %>
+</p>
+
+<p>
+  <strong>Band:</strong>
+  <%= @bang_dream_character.band_id %>
+</p>
+
+<%= link_to 'Edit', edit_bang_dream_character_path(@bang_dream_character) %> |
+<%= link_to 'Back', bang_dream_characters_path %>

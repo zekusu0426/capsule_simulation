@@ -1,0 +1,2 @@
+class BangDreamCharacter < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<%= form_with(model: bang_dream_character, local: true) do |form| %>
+  <% if bang_dream_character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bang_dream_character.errors.count, "error") %> prohibited this bang_dream_character from being saved:</h2>
+
+      <ul>
+      <% bang_dream_character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :band_id %>
+    <%= form.number_field :band_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
