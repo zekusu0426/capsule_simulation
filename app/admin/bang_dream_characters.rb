@@ -11,7 +11,5 @@ ActiveAdmin.register BangDreamCharacter do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-	permit_params :name, :band_id
-	# permit_params { BangDreamCharacter.attribute_names.map(&:to_sym) }
 
 end
