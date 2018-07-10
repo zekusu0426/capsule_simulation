@@ -1,3 +1,3 @@
 class BangDreamCharacter < ApplicationRecord
-	belongs_to :band
+	belongs_to :band, optional: true
 end
