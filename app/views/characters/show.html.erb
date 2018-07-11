@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @character.first_name %>
+</p>
+
+<p>
+  <strong>First name kana:</strong>
+  <%= @character.first_name_kana %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @character.last_name %>
+</p>
+
+<p>
+  <strong>Last name kana:</strong>
+  <%= @character.last_name_kana %>
+</p>
+
+<p>
+  <strong>Band:</strong>
+  <%= @character.band_id %>
+</p>
+
+<p>
+  <strong>Introduction:</strong>
+  <%= @character.introduction %>
+</p>
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

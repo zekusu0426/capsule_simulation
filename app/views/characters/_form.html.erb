@@ -1,0 +1,47 @@
+<%= form_with(model: character, local: true) do |form| %>
+  <% if character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+      <ul>
+      <% character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_name_kana %>
+    <%= form.text_field :first_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name_kana %>
+    <%= form.text_field :last_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :band_id %>
+    <%= form.number_field :band_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :introduction %>
+    <%= form.text_area :introduction %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

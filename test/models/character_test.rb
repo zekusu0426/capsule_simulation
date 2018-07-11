@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BangDreamCharacterTest < ActiveSupport::TestCase
+class CharacterTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
