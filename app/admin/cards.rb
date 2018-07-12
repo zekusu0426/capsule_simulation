@@ -11,5 +11,5 @@ ActiveAdmin.register Card do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+	permit_params :character_id
 end
