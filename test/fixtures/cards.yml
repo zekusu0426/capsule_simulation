@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  name_kana: MyString
+  character_id: 1
+  capsule_id: 1
+  performance: 1
+  technic: 1
+  visual: 1
+  introduction: MyText
+
+two:
+  name: MyString
+  name_kana: MyString
+  character_id: 1
+  capsule_id: 1
+  performance: 1
+  technic: 1
+  visual: 1
+  introduction: MyText

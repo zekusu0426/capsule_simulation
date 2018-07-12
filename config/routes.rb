@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cards
   resources :characters
   resources :bands
   devise_for :admin_accounts, ActiveAdmin::Devise.config
