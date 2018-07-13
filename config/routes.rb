@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :elements
   resources :cards
   resources :characters
   resources :bands
