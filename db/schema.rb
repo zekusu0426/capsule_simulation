@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_042447) do
     t.string "name_kana"
     t.integer "character_id"
     t.integer "capsule_id"
+    t.integer "element_id"
     t.integer "performance"
     t.integer "technic"
     t.integer "visual"

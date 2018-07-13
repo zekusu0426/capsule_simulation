@@ -12,4 +12,11 @@ ActiveAdmin.register Card do
 #   permitted
 # end
 
+  form do |f|
+    f.inputs do
+      f.input :character, :as => :select, :member_label => :first_name
+    end
+    f.actions
+  end
+
 end

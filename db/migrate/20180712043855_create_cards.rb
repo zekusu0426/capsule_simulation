@@ -5,6 +5,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :name_kana
       t.integer :character_id
       t.integer :capsule_id
+      t.integer :element_id
       t.integer :performance
       t.integer :technic
       t.integer :visual
