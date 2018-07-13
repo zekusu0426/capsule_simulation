@@ -12,11 +12,13 @@ ActiveAdmin.register Card do
 #   permitted
 # end
 
-  form do |f|
-    f.inputs do
-      f.input :character, :as => :select, :member_label => :first_name
-    end
-    f.actions
-  end
+	form do |f|
+		f.inputs do
+    	# f.input :character, :as => :select, :member_label => :first_name
+		f.input :character, :as => :select, collection: Character.all.map { |a| [a.first_name, a.id] }
+		# collection: Author.all.map { |a| [a.name, a.id] }
+    	end
+    	f.actions
+	end
 
 end
