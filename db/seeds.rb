@@ -18,6 +18,20 @@ Band.create(:name => "bandC")
 Band.create(:name => "bandD")
 Band.create(:name => "bandE")
 
+Element.delete_all # すべて削除
+Element.connection.execute("delete from sqlite_sequence where name='Elements'") # autoincrement削除
+Element.create(:name => "ElementA")
+Element.create(:name => "ElementB")
+Element.create(:name => "ElementC")
+Element.create(:name => "ElementD")
+
+Card.delete_all # すべて削除
+Card.connection.execute("delete from sqlite_sequence where name='Cards'") # autoincrement削除
+Card.create(:name => "CardA")
+Card.create(:name => "CardB")
+Card.create(:name => "CardC")
+Card.create(:name => "CardD")
+
 Character.delete_all # すべて削除
 Character.connection.execute("delete from sqlite_sequence where name='bang_dream_characters'") # autoincrement削除
 Character.create(:first_name => "testA", :band_id => "1")

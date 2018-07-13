@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_11_032920) do
+ActiveRecord::Schema.define(version: 2018_07_13_042447) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_07_11_032920) do
 
   create_table "bands", force: :cascade do |t|
     t.string "name"
-    t.string "kana_name"
+    t.string "name_kana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,6 +59,19 @@ ActiveRecord::Schema.define(version: 2018_07_11_032920) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cards", force: :cascade do |t|
+    t.string "name"
+    t.string "name_kana"
+    t.integer "character_id"
+    t.integer "capsule_id"
+    t.integer "performance"
+    t.integer "technic"
+    t.integer "visual"
+    t.text "introduction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "characters", force: :cascade do |t|
     t.string "first_name"
     t.string "first_name_kana"
@@ -66,6 +79,13 @@ ActiveRecord::Schema.define(version: 2018_07_11_032920) do
     t.string "last_name_kana"
     t.integer "band_id"
     t.text "introduction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "elements", force: :cascade do |t|
+    t.string "name"
+    t.string "name_kana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
