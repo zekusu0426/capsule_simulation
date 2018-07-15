@@ -1,3 +1,3 @@
 class Element < ApplicationRecord
-	has_many :card
+	has_many :cards
 end

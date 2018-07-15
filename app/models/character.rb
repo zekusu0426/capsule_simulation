@@ -1,4 +1,4 @@
 class Character < ApplicationRecord
 	belongs_to :band
-	has_many :character
+	has_many :characters
 end

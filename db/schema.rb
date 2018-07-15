@@ -50,15 +50,6 @@ ActiveRecord::Schema.define(version: 2018_07_13_042447) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bang_dream_characters", force: :cascade do |t|
-    t.string "name"
-    t.string "kana_first_name"
-    t.string "kana_last_name"
-    t.integer "band_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cards", force: :cascade do |t|
     t.string "name"
     t.string "name_kana"
