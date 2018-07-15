@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @capsule.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @capsule.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @capsule.end_time %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @capsule.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_capsule_path(@capsule) %> |
+<%= link_to 'Back', capsules_path %>

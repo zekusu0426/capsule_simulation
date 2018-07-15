@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :capsules
   resources :elements
   resources :cards
   resources :characters
