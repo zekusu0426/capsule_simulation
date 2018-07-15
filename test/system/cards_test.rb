@@ -16,6 +16,7 @@ class CardsTest < ApplicationSystemTestCase
 
     fill_in "Capsule", with: @card.capsule_id
     fill_in "Character", with: @card.character_id
+    fill_in "Element", with: @card.element_id
     fill_in "Introduction", with: @card.introduction
     fill_in "Name", with: @card.name
     fill_in "Name Kana", with: @card.name_kana
@@ -34,6 +35,7 @@ class CardsTest < ApplicationSystemTestCase
 
     fill_in "Capsule", with: @card.capsule_id
     fill_in "Character", with: @card.character_id
+    fill_in "Element", with: @card.element_id
     fill_in "Introduction", with: @card.introduction
     fill_in "Name", with: @card.name
     fill_in "Name Kana", with: @card.name_kana
