@@ -40,6 +40,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Write an annotation to the Model.
 gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
 
+# Using Bootstrap Theme
+gem 'bootstrap-sass'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
