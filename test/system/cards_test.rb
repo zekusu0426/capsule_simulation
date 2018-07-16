@@ -21,6 +21,7 @@ class CardsTest < ApplicationSystemTestCase
     fill_in "Name", with: @card.name
     fill_in "Name Kana", with: @card.name_kana
     fill_in "Performance", with: @card.performance
+    fill_in "Reality", with: @card.reality
     fill_in "Technic", with: @card.technic
     fill_in "Visual", with: @card.visual
     click_on "Create Card"
@@ -40,6 +41,7 @@ class CardsTest < ApplicationSystemTestCase
     fill_in "Name", with: @card.name
     fill_in "Name Kana", with: @card.name_kana
     fill_in "Performance", with: @card.performance
+    fill_in "Reality", with: @card.reality
     fill_in "Technic", with: @card.technic
     fill_in "Visual", with: @card.visual
     click_on "Update Card"

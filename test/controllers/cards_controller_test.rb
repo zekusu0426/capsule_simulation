@@ -17,7 +17,7 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create card" do
     assert_difference('Card.count') do
-      post cards_url, params: { card: { capsule_id: @card.capsule_id, character_id: @card.character_id, element_id: @card.element_id, introduction: @card.introduction, name: @card.name, name_kana: @card.name_kana, performance: @card.performance, technic: @card.technic, visual: @card.visual } }
+      post cards_url, params: { card: { capsule_id: @card.capsule_id, character_id: @card.character_id, element_id: @card.element_id, introduction: @card.introduction, name: @card.name, name_kana: @card.name_kana, performance: @card.performance, reality: @card.reality, technic: @card.technic, visual: @card.visual } }
     end
 
     assert_redirected_to card_url(Card.last)
@@ -34,7 +34,7 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update card" do
-    patch card_url(@card), params: { card: { capsule_id: @card.capsule_id, character_id: @card.character_id, element_id: @card.element_id, introduction: @card.introduction, name: @card.name, name_kana: @card.name_kana, performance: @card.performance, technic: @card.technic, visual: @card.visual } }
+    patch card_url(@card), params: { card: { capsule_id: @card.capsule_id, character_id: @card.character_id, element_id: @card.element_id, introduction: @card.introduction, name: @card.name, name_kana: @card.name_kana, performance: @card.performance, reality: @card.reality, technic: @card.technic, visual: @card.visual } }
     assert_redirected_to card_url(@card)
   end
 

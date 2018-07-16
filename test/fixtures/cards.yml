@@ -1,10 +1,30 @@
+# == Schema Information
+#
+# Table name: cards
+#
+#  id           :integer          not null, primary key
+#  reality      :integer
+#  name         :string
+#  name_kana    :string
+#  character_id :integer
+#  capsule_id   :integer
+#  element_id   :integer
+#  performance  :integer
+#  technic      :integer
+#  visual       :integer
+#  introduction :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  reality: 1
   name: MyString
   name_kana: MyString
   character_id: 1
-  capsule_id: 
+  capsule_id: 1
   element_id: 1
   performance: 1
   technic: 1
@@ -12,10 +32,11 @@ one:
   introduction: MyText
 
 two:
+  reality: 1
   name: MyString
   name_kana: MyString
   character_id: 1
-  capsule_id: 
+  capsule_id: 1
   element_id: 1
   performance: 1
   technic: 1

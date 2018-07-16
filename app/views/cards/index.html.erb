@@ -2,9 +2,10 @@
 
 <h1>Cards</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
+      <th>Reality</th>
       <th>Name</th>
       <th>Name kana</th>
       <th>Character</th>
@@ -21,6 +22,7 @@
   <tbody>
     <% @cards.each do |card| %>
       <tr>
+        <td><%= card.reality %></td>
         <td><%= card.name %></td>
         <td><%= card.name_kana %></td>
         <td><%= card.character_id %></td>

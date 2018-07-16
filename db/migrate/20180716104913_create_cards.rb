@@ -1,6 +1,7 @@
 class CreateCards < ActiveRecord::Migration[5.2]
   def change
     create_table :cards do |t|
+      t.integer :reality
       t.string :name
       t.string :name_kana
       t.integer :character_id
