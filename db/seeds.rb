@@ -70,6 +70,6 @@ Card.create(:reality => 4,:name => "戸山香澄[みんなで遊園地！]", :na
 Card.create(:reality => 4,:name => "戸山香澄[はじまりの音]", :name_kana => "トヤマカスミハジマリノオト", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
 
 
-
+Card.create(:reality => 4,:name => "テストデータ", :name_kana => "トヤマカスミハジマリノオト", :character_id => 2 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
 
 

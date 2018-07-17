@@ -2,36 +2,30 @@
 
 <h1>Characters</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>First name kana</th>
-      <th>Last name</th>
-      <th>Last name kana</th>
-      <th>Band_Name</th>
-      <th>Introduction</th>
-      <!-- <th colspan="3"></th> -->
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-2 offset-md-1">First name</div>
+  <div class="col-md-2 ">First name kana</div>
+  <div class="col-md-2 ">Last name</div>
+  <div class="col-md-2 ">Last name kana</div>
+  <div class="col-md-2 ">Band_Name</div>
+</div>
 
-  <tbody>
-    <% @characters.each do |character| %>
-      <tr>
-        <td><%= character.first_name %></td>
-        <td><%= character.first_name_kana %></td>
-        <td><%= character.last_name %></td>
-        <td><%= character.last_name_kana %></td>
-        <td><%= character.band.name %></td>
-        <td><%= character.introduction %></td>
-        <td><%#= link_to 'Show', character %></td>
-        <td><%#= link_to 'Edit', edit_character_path(character) %></td>
-        <td><%#= link_to 'Destroy', character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @div_row_start = 0 %>
+<% @div_row_end = 0 %>
+
+<div class="row">
+  <% @characters.each do |character| %>
+    <div class="col-md-2 card">
+      <img class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"><%#= character.first_name + character.last_name %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 
 <br>
-
 <%= link_to 'New Character', new_character_path %>
