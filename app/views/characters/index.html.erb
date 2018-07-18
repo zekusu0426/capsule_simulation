@@ -2,18 +2,12 @@
 
 <h1>Characters</h1>
 
-<div id="accordion">
-<% @characters.each do |character| %>
-  <div id="collapse_<%= character.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-    <div class="card-body">
-      Character.id = <%= character.id %>
-    </div>
-  </div>
-<% end %>
-</div>
+
+
 
 <% @member_count = 0 %>
 
+<div id="accordion">
 <% @characters.each do |character| %>
 
 <!-- メンバー最初だけrow追加 -->
@@ -21,7 +15,6 @@
 <div class="row">
   <% end %> 
   <% @member_count = @member_count + 1 %>
-
 
   <div class="col card" data-toggle="collapse" data-target="#collapse_<%= character.id %>" aria-expanded="true" aria-controls="collapse_<%= character.id %>">
     <img class="card-img-top">
@@ -32,15 +25,24 @@
     </div>
   </div>
 
-  
+  <!-- アコーディオン -->
+  <div class="row">
+    <div id="collapse_<%= character.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        Character.id = <%= character.id %>
+      </div>
+    </div>
+  </div>
+
   <!-- メンバー最後だけrow終わりを追加 -->
   <% if BAND_MEMBERS == @member_count %>
 </div>
     <% @member_count = 0 %>
   <% end %>
 
+
+
 <% end %>
-
-
+</div>
 <br>
 <%= link_to 'New Character', new_character_path %>
