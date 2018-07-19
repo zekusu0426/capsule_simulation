@@ -12,7 +12,7 @@ admin_account.update_attributes(email: 'admin@admin.com', password: 'password', 
 
 Band.delete_all # すべて削除
 Band.connection.execute("delete from sqlite_sequence where name='bands'") # autoincrement削除
-Band.create(:id => 1,:name => "Poppin'Party", :name_kana => "ポッピンパーティー")
+Band.create(:id => 1,:name => "Poppin\'Party", :name_kana => "ポッピンパーティー")
 Band.create(:id => 2,:name => "After glow", :name_kana => "アフターグロウ")
 Band.create(:id => 3,:name => "Pastel Palettes", :name_kana => "パステルパレット")
 Band.create(:id => 4,:name => "Roselia", :name_kana => "ロゼリア")

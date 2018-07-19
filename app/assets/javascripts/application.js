@@ -17,3 +17,12 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+// アコーディオン表示・非表示
+// カードとアコーディオン以外をクリックしたらアコーディオンを閉じます。
+$(document).on('click', function(e) {
+    // ２．クリックされた場所の判定
+    if(!($(e.target).closest('.card').length || $(e.target).closest('.collapse').length)){
+        $(".collapse").collapse('hide');
+    }
+});

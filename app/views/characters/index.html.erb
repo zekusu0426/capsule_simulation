@@ -5,44 +5,42 @@
 
 
 
-<% @member_count = 0 %>
 
-<div id="accordion">
-<% @characters.each do |character| %>
-
-<!-- メンバー最初だけrow追加 -->
-  <% if @member_count == 0 %>
-<div class="row">
-  <% end %> 
-  <% @member_count = @member_count + 1 %>
-
-  <div class="col card" data-toggle="collapse" data-target="#collapse_<%= character.id %>" aria-expanded="true" aria-controls="collapse_<%= character.id %>">
-    <img class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title"><%#= character.first_name + character.last_name %></h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <!-- アコーディオン -->
-  <div class="row">
-    <div id="collapse_<%= character.id %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+<%  @characters.group(:band_id).each do |b| %>
+  <% @characters_band = @characters.where(band_id: b.band_id) %>
+<!-- アコーディオン_<%= b.band.name %> -->
+<div id="accordion_<%= b.band_id %>" class="my-1">
+  <% @characters_band.each do |c| %>
+  <div id="collapse_<%= c.id %>" class="collapse" aria-labelledby="accordion_<%= b.band_id %>" data-parent="#accordion_<%= b.band_id %>">
+    <div class="card" >
       <div class="card-body">
-        Character.id = <%= character.id %>
+      <% c.cards.each do |card| %>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck<%= card.id %>">
+          <label class="custom-control-label" for="customCheck<%= card.id %>"><%= card.name %></label>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>
-
-  <!-- メンバー最後だけrow終わりを追加 -->
-  <% if BAND_MEMBERS == @member_count %>
-</div>
-    <% @member_count = 0 %>
   <% end %>
-
-
-
-<% end %>
 </div>
+<!-- 表示_<%= b.band_id %> -->
+<div class="row">
+  <% @characters_band.each do |c| %>
+  <div class="col">
+    <div class="card" data-toggle="collapse" data-target="#collapse_<%= c.id %>" aria-expanded="true" aria-controls="collapse_<%= c.id %>">
+      <img class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"><%#= c.first_name + c.last_name %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>
+
 <br>
 <%= link_to 'New Character', new_character_path %>
