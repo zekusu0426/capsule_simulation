@@ -11,7 +11,7 @@
 <!-- アコーディオン_<%= b.band.name %> -->
 <div id="accordion_<%= b.band_id %>">
   <% @characters_band.each do |c| %>
-  <div id="collapse_<%= c.id %>" class="collapse<%= " show" if c.id == 1 %> my-1" aria-labelledby="accordion_<%= b.band_id %>" data-parent="#accordion_<%= b.band_id %>">
+  <div id="collapse_<%= c.id %>" class="collapse my-1" aria-labelledby="accordion_<%= b.band_id %>" data-parent="#accordion_<%= b.band_id %>">
     <div class="card" >
       <div class="card-body">
       <% c.cards.each do |card| %>
@@ -26,20 +26,22 @@
   <% end %>
 </div>
 <!-- 表示_<%= b.band_id %> -->
-<div class="row">
+<!-- <div class="row"> -->
+<div class="card-group">
   <% @characters_band.each do |c| %>
-  <!-- <div class="col"> -->
-    <div class="col card" data-toggle="collapse" data-target="#collapse_<%= c.id %>" aria-expanded="true" aria-controls="collapse_<%= c.id %>">
-      <img class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title"><%#= c.first_name + c.last_name %></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+  <div class="card" data-toggle="collapse" data-target="#collapse_<%= c.id %>" aria-expanded="true" aria-controls="collapse_<%= c.id %>">
+    <%= image_tag 'sample.svg' %>
+    <div class="card-body">
+      <h5 class="card-title"><%#= c.last_name + c.first_name %></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-  <!-- </div> -->
+  </div>
   <% end %>
 </div>
 <% end %>
+
+
 
 <br>
 <%= link_to 'New Character', new_character_path %>
