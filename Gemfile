@@ -68,7 +68,7 @@ end
 
 gem 'sqlite3', group: :development
 #本番ではpostgressを使用
-gem 'pg', group: :production
+gem 'pg', '~> 0.18', group: :production
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
