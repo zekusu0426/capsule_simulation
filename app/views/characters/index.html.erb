@@ -3,44 +3,50 @@
 <h1>Characters</h1>
 
 
+<!-- やっぱりモーダルウィンドウがいいかな・・・ -->
+<!-- ヒント：https://v4-alpha.getbootstrap.com/layout/responsive-utilities/ -->
 
 
-
+<div class="row">
 <%  @characters.group(:band_id).each do |b| %>
   <% @characters_band = @characters.where(band_id: b.band_id) %>
-<!-- アコーディオン_<%= b.band.name %> -->
-<div id="accordion_<%= b.band_id %>">
-  <% @characters_band.each do |c| %>
-  <div id="collapse_<%= c.id %>" class="collapse my-1" aria-labelledby="accordion_<%= b.band_id %>" data-parent="#accordion_<%= b.band_id %>">
-    <div class="card" >
-      <div class="card-body">
-      <% c.cards.each do |card| %>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="customCheck<%= card.id %>">
-          <label class="custom-control-label" for="customCheck<%= card.id %>"><%= card.name %></label>
+  <div class="col-6 col-sm-12 sticky-top">
+    <!-- アコーディオン_<%= b.band.name %> -->
+    <div id="accordion_<%= b.band_id %>">
+      <% @characters_band.each do |c| %>
+      <div id="collapse_<%= c.id %>" class="collapse my-1" aria-labelledby="accordion_<%= b.band_id %>" data-parent="#accordion_<%= b.band_id %>">
+        <div class="card" >
+          <div class="card-body">
+          <% c.cards.each do |card| %>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck<%= card.id %>">
+              <label class="custom-control-label" for="customCheck<%= card.id %>"><%= card.name %></label>
+            </div>
+          <% end %>
+          </div>
         </div>
-      <% end %>
       </div>
-    </div>
+      <% end %>
+    </div>    
   </div>
-  <% end %>
-</div>
-<!-- 表示_<%= b.band_id %> -->
-<!-- <div class="row"> -->
-<div class="card-group">
-  <% @characters_band.each do |c| %>
-  <div class="card" data-toggle="collapse" data-target="#collapse_<%= c.id %>" aria-expanded="true" aria-controls="collapse_<%= c.id %>">
-    <%= image_tag 'sample.svg' %>
-    <div class="card-body">
-      <h5 class="card-title"><%#= c.last_name + c.first_name %></h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <% end %>
-</div>
-<% end %>
 
+  <!-- カードグループ_<%= b.band.name %> -->
+  <div class="col-6 col-sm-12">
+    <div class="row justify-content-center">
+      <% @characters_band.each do |c| %>
+      <div class="card col-12 col-sm-2" data-toggle="collapse" data-target="#collapse_<%= c.id %>" aria-expanded="true" aria-controls="collapse_<%= c.id %>">
+        <%= image_tag 'sample.svg' %>
+        <div class="card-body">
+          <h5 class="card-title"><%#= c.last_name + c.first_name %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
 
 
 <br>
