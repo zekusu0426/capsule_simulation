@@ -1,6 +1,13 @@
+<link href="http://creatornote.nakweb.com/wp-content/themes/giraffe/css/odometer-theme-default.css" rel="stylesheet" type="text/css" >
+<script src="http://creatornote.nakweb.com/wp-content/themes/giraffe/js/odometer.min.js"></script>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Cards</h1>
+
+
+
+<p class="count" data-num="100">0</p>
 
 <table class="table table-striped">
   <thead>
@@ -40,6 +47,33 @@
   </tbody>
 </table>
 
-<br>
 
 <%= link_to 'New Card', new_card_path %>
+
+
+<script>
+$(function(){
+    var countElm = $('.count'),
+    countSpeed = 10;
+ 
+    countElm.each(function(){
+        var self = $(this),
+        countMax = self.attr('data-num'),
+        thisCount = self.text(),
+        countTimer;
+ 
+        function timer(){
+            countTimer = setInterval(function(){
+                var countNext = thisCount++;
+                self.text(('000' + countNext).slice(-4));
+ 
+                if(countNext == countMax){
+                    clearInterval(countTimer);
+                }
+            },countSpeed);
+        }
+        timer();
+    });
+ 
+});
+</script>
