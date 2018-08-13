@@ -63,11 +63,11 @@ Capsule.create(:id => 1, :name => "テストガチャ" , :start_time => "2017/07
 
 Card.delete_all # すべて削除
 Card.connection.execute("delete from sqlite_sequence where name='Cards'") # autoincrement削除
-# Card.create(:reality => 4,:name => "戸山香澄[おもいでめぐり]", :name_kana => "トヤマカスミオモイデメグリ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
-# Card.create(:reality => 4,:name => "戸山香澄[星空を見上げて]", :name_kana => "トヤマカスミホシゾラヲミアゲテ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
-# Card.create(:reality => 4,:name => "戸山香澄[最高のステージに！]", :name_kana => "トヤマカスミサイコウノステージニ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
-# Card.create(:reality => 4,:name => "戸山香澄[みんなで遊園地！]", :name_kana => "トヤマカスミミンナデユウエンチ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
-# Card.create(:reality => 4,:name => "戸山香澄[はじまりの音]", :name_kana => "トヤマカスミハジマリノオト", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
+Card.create(:reality => 4,:name => "戸山香澄[おもいでめぐり]", :name_kana => "トヤマカスミオモイデメグリ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
+Card.create(:reality => 4,:name => "戸山香澄[星空を見上げて]", :name_kana => "トヤマカスミホシゾラヲミアゲテ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
+Card.create(:reality => 4,:name => "戸山香澄[最高のステージに！]", :name_kana => "トヤマカスミサイコウノステージニ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
+Card.create(:reality => 4,:name => "戸山香澄[みんなで遊園地！]", :name_kana => "トヤマカスミミンナデユウエンチ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
+Card.create(:reality => 4,:name => "戸山香澄[はじまりの音]", :name_kana => "トヤマカスミハジマリノオト", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
 
 
 # Card.create(:reality => 4,:name => "テストデータ", :name_kana => "トヤマカスミハジマリノオト", :character_id => 2 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")

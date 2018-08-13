@@ -2,53 +2,76 @@
 
 <h1>Characters</h1>
 
+<div class="possession_rate"></div>
 
-<!-- やっぱりモーダルウィンドウがいいかな・・・ -->
-<!-- ヒント：https://v4-alpha.getbootstrap.com/layout/responsive-utilities/ -->
-<!-- <link rel="stylesheet" href="odometer-theme-car.css" />
-<script src="odometer.js"></script> -->
-
-<div class="row">
-<%  @characters.group(:band_id).each do |b| %>
-  <% @characters_band = @characters.where(band_id: b.band_id) %>
-  <div class="col-6 col-sm-12 sticky-top">
-    <!-- アコーディオン_<%= b.band.name %> -->
-    <div id="accordion_<%= b.band_id %>">
-      <% @characters_band.each do |c| %>
-      <div id="collapse_<%= c.id %>" class="collapse my-1" aria-labelledby="accordion_<%= b.band_id %>" data-parent="#accordion_<%= b.band_id %>">
-        <div class="card" >
-          <div class="card-body">
-          <% c.cards.each do |card| %>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="customCheck<%= card.id %>">
-              <label class="custom-control-label" for="customCheck<%= card.id %>"><%= card.name %></label>
-            </div>
-          <% end %>
+<!-- キャラクターカード一覧 -->
+<div id="card_list">
+  <% @characters.each do |character| %>
+    <div class="modal fade" id="Modal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><%= character.last_name + " " + character.first_name %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <% character.cards.each do |card| %>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input card_cnt" id="customCheck<%= card.id %>">
+                <label class="custom-control-label" for="customCheck<%= card.id %>"><%= card.name %></label>
+              </div>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
-      <% end %>
-    </div>    
-  </div>
+    </div>
+  <% end %>
+</div>
 
-  <!-- カードグループ_<%= b.band.name %> -->
-  <div class="col-6 col-sm-12">
-    <div class="row justify-content-center">
-      <% @characters_band.each do |c| %>
-      <div class="card col-12 col-sm-2" data-toggle="collapse" data-target="#collapse_<%= c.id %>" aria-expanded="true" aria-controls="collapse_<%= c.id %>">
-        <%= image_tag 'sample.svg' %>
-        <div class="card-body">
-          <h5 class="card-title"><%#= c.last_name + c.first_name %></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<% #バンド単位でGroup by %>
+<% @characters.group(:band_id).each do |b| %>
+  <% #バンド単位でLoop %>
+  <% @characters_band = @characters.where(band_id: b.band_id) %>
+  <div class="row d-none d-md-block">
+    <div class="col-md-12">
+      <div class="row justify-content-center">
+        <% #5列表示対応 %>
+        <%  @characters_band.each do |character| %>
+        <div class="card col-md-2" data-toggle="modal" data-target="#Modal<%= character.id %>">
+          <%= image_tag 'sample.svg' %>
+          <div class="card-body">
+            <h5 class="card-title"><%= character.last_name + " " + character.first_name %></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
 <% end %>
-</div>
 
+<!-- タブレット・スマホ用 -->
+<%  @characters.each do |character| %>
+<div class="row m-1 justify-content-center">
+  <div class="col-md-12">
+    <div class="card d-block d-md-none" data-toggle="modal" data-target="#Modal<%= character.id %>">
+      <%= image_tag('sample.svg', :class => "card-img-top", :alt => "") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= character.last_name + " " + character.first_name %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <br>
 <%= link_to 'New Character', new_character_path %>

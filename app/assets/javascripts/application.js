@@ -18,11 +18,11 @@
 //= require popper
 //= require bootstrap-sprockets
 
-// アコーディオン表示・非表示
-// カードとアコーディオン以外をクリックしたらアコーディオンを閉じます。
-$(document).on('click', function(e) {
-    // ２．クリックされた場所の判定
-    if(!($(e.target).closest('.card').length || $(e.target).closest('.collapse').length)){
-        $(".collapse").collapse('hide');
-    }
+// カード一覧のカウント	
+$(function() {
+    var total = $('#card_list input:checkbox').length;
+    $('input:checkbox').change(function() {
+        var cnt = $('#card_list input:checkbox:checked').length;
+        $('div.possession_rate').text('選択：' + cnt + '個 \r\n 所持率：' + (cnt/total)*100 + '％' );
+    }).trigger('change');
 });
