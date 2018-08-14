@@ -67,6 +67,10 @@ group :test do
 end
 
 gem 'sqlite3', group: :development
+
+group :production do
+  gem 'pg', '0.20.0'
+end
 #本番ではpostgressを使用
 # gem 'pg', '~> 0.21', group: :production
 
