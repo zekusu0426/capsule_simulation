@@ -2,9 +2,11 @@
 
 <h1>Characters</h1>
 
-<div class="possession_rate"></div>
+<div class="row justify-content-center">
+  <div class="possession_rate h2"></div>
+</div>
 
-<!-- キャラクターカード一覧 -->
+<!-- キャラクターカード一覧(モーダル) -->
 <div id="card_list">
   <% @characters.each do |character| %>
     <div class="modal fade" id="Modal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -16,17 +18,25 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <!-- モーダルボティ -->
           <div class="modal-body">
-            <% character.cards.each do |card| %>
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input card_cnt" id="customCheck<%= card.id %>">
-                <label class="custom-control-label" for="customCheck<%= card.id %>"><%= card.name %></label>
-              </div>
-            <% end %>
+            <div class="custom-control custom-checkbox card_all_checkbox">
+              <input type="checkbox" class="custom-control-input" id="card_all_checkbox_<%= character.id %>">
+              <label class="custom-control-label" for="card_all_checkbox_<%= character.id %>">全選択/全解除</label>
+            </div>
+            <div class="card_checkbox_list">
+              <% character.cards.each do |card| %>
+                <div class="custom-control custom-checkbox card_checkbox checkbox_<%= card.character_id %>">
+                  <input type="checkbox" class="custom-control-input" id="customCheck<%= card.id %>">
+                  <label class="custom-control-label" for="customCheck<%= card.id %>"><%= card.name %></label>
+                </div>
+              <% end %>
+            </div>
           </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
       </div>
