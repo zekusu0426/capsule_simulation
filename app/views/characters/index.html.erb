@@ -6,6 +6,7 @@
   <div class="possession_rate h2"></div>
 </div>
 
+
 <!-- キャラクターカード一覧(モーダル) -->
 <div id="card_list">
   <% @characters.each do |character| %>
@@ -20,10 +21,15 @@
           </div>
           <!-- モーダルボティ -->
           <div class="modal-body">
-            <div class="custom-control custom-checkbox card_all_checkbox">
-              <input type="checkbox" class="custom-control-input" id="card_all_checkbox_<%= character.id %>">
-              <label class="custom-control-label" for="card_all_checkbox_<%= character.id %>">全選択/全解除</label>
-            </div>
+
+            <!-- ソート -->
+            <h5>Sort</h5>
+            <button type="button" class="btn btn-primary btn-select_all">全選択</button>
+            <button type="button" class="btn btn-secondary btn-all_cancellation">全解除</button>
+            <hr>
+
+            <!-- カードリスト -->
+            <h5>Card List</h5>
             <div class="card_checkbox_list">
               <% character.cards.each do |card| %>
                 <div class="custom-control custom-checkbox card_checkbox checkbox_<%= card.character_id %>">
@@ -32,6 +38,7 @@
                 </div>
               <% end %>
             </div>
+
           </div>
 
           <div class="modal-footer">
