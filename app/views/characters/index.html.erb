@@ -1,11 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "Characters") %>
 
-<h1>Characters</h1>
-
+<!-- <h1>Characters</h1> -->
 <div class="row justify-content-center">
-  <div class="possession_rate h2"></div>
+  <div class="jumbotron">
+    <h1>Example</h1>
+    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.<div class="possession_rate"></div></p>
+    <a class="btn btn-lg btn-primary" href="" role="button">View navbar docs »</a>
+  </div>
 </div>
-
 
 <!-- キャラクターカード一覧(モーダル) -->
 <div id="card_list">
@@ -60,7 +62,7 @@
       <div class="row justify-content-center">
         <% #5列表示対応 %>
         <%  @characters_band.each do |character| %>
-        <div class="card col-md-2" data-toggle="modal" data-target="#Modal<%= character.id %>">
+        <div class="card col-md-2 m-1" data-toggle="modal" data-target="#Modal<%= character.id %>">
           <%= image_tag 'sample.svg' %>
           <div class="card-body">
             <h5 class="card-title"><%= character.last_name + " " + character.first_name %></h5>

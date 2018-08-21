@@ -18,7 +18,6 @@
 //= require popper
 //= require bootstrap-sprockets
 
-	
 $(function() {
     // カード一覧のカウント
     var total = $('#card_list .card_checkbox input:checkbox').length;
@@ -51,7 +50,7 @@ $(function() {
         var cnt = $('#card_list .card_checkbox input:checkbox:checked').length;
         $('div.possession_rate').text('所持率：' + Math.round(cnt*100*100/total)/100 + '％' );
         $('div.selected_card').text('選択：' + cnt + '個');
-    }).trigger('change');   
+    }).trigger('change');
 });
 
 
