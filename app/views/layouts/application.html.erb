@@ -17,18 +17,20 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item <%= 'active' if current_page?(characters_path) %>">
+      <li class="nav-item <%= current_page?(top_index_path) ? "active" : "disabled" %>">
+        <%= link_to(top_index_path, class: 'nav-link') do %>
+          Top <span class="sr-only">(current)</span>
+        <% end %>
+      </li>
+      <li class="nav-item <%= current_page?(characters_path) ? "active" : "disabled" %>">
         <%= link_to(characters_path, class: 'nav-link') do %>
           Character <span class="sr-only">(current)</span>
         <% end %>
       </li>
-      <li class="nav-item <%= 'active' if current_page?(cards_path) %>">
+      <li class="nav-item <%= current_page?(cards_path) ? "active" : "disabled" %>">
         <%= link_to(cards_path, class: 'nav-link') do %>
           Card <span class="sr-only">(current)</span>
         <% end %>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
     <form class="form-inline mt-2 mt-md-0">

@@ -11,7 +11,7 @@ admin_account.update_attributes(email: 'admin@admin.com', password: 'password', 
 # AdminAccount.create!(email: 'admin@admin.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 Band.delete_all # すべて削除
-Band.connection.execute("delete from sqlite_sequence where name='bands'") # autoincrement削除
+# Band.connection.execute("delete from sqlite_sequence where name='bands'") # autoincrement削除
 Band.create(:id => 1,:name => "Poppin\'Party", :name_kana => "ポッピンパーティー")
 Band.create(:id => 2,:name => "After glow", :name_kana => "アフターグロウ")
 Band.create(:id => 3,:name => "Pastel Palettes", :name_kana => "パステルパレット")
@@ -19,14 +19,14 @@ Band.create(:id => 4,:name => "Roselia", :name_kana => "ロゼリア")
 Band.create(:id => 5,:name => "ハロー、ハッピーワールド!", :name_kana => "ハローハッピーワールド")
 
 Element.delete_all # すべて削除
-Element.connection.execute("delete from sqlite_sequence where name='elements'") # autoincrement削除
+# Element.connection.execute("delete from sqlite_sequence where name='elements'") # autoincrement削除
 Element.create(:id => 1,:name => "パワフル" ,:name_kana => "パワフル")
 Element.create(:id => 2,:name => "クール" ,:name_kana => "クール")
 Element.create(:id => 3,:name => "ピュア" ,:name_kana => "ピュア")
 Element.create(:id => 4,:name => "ハッピー" ,:name_kana => "ハッピー")
 
 Character.delete_all # すべて削除
-Character.connection.execute("delete from sqlite_sequence where name='characters'") # autoincrement削除
+# Character.connection.execute("delete from sqlite_sequence where name='characters'") # autoincrement削除
 Character.create(:first_name => "香澄", :first_name_kana => "カスミ", :last_name => "戸山", :last_name_kana => "トヤマ", :band_id => 1, :introduction => "")
 Character.create(:first_name => "有咲", :first_name_kana => "アリサ", :last_name => "市ヶ谷", :last_name_kana => "イチガヤ", :band_id => 1, :introduction => "")
 Character.create(:first_name => "たえ", :first_name_kana => "タエ", :last_name => "花園", :last_name_kana => "ハナゾノ", :band_id => 1, :introduction => "")
@@ -58,11 +58,11 @@ Character.create(:first_name => "花音", :first_name_kana => "カノン", :last
 Character.create(:first_name => "北沢", :first_name_kana => "ハグミ", :last_name => "北沢", :last_name_kana => "キタザワ", :band_id => 5, :introduction => "")
 
 Capsule.delete_all # すべて削除
-Capsule.connection.execute("delete from sqlite_sequence where name='Capsules'") # autoincrement削除
+# Capsule.connection.execute("delete from sqlite_sequence where name='Capsules'") # autoincrement削除
 Capsule.create(:id => 1, :name => "テストガチャ" , :start_time => "2017/07/15 15:00:00", :end_time => "2017/07/15 15:00:00", :remarks => "備考")
 
 Card.delete_all # すべて削除
-Card.connection.execute("delete from sqlite_sequence where name='Cards'") # autoincrement削除
+# Card.connection.execute("delete from sqlite_sequence where name='Cards'") # autoincrement削除
 Card.create(:reality => 4,:name => "戸山香澄[おもいでめぐり]", :name_kana => "トヤマカスミオモイデメグリ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
 Card.create(:reality => 4,:name => "戸山香澄[星空を見上げて]", :name_kana => "トヤマカスミホシゾラヲミアゲテ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
 Card.create(:reality => 4,:name => "戸山香澄[最高のステージに！]", :name_kana => "トヤマカスミサイコウノステージニ", :character_id => 1 , :capsule_id => 1, :element_id => 1, :performance => 1111, :technic => 1111, :visual => 1111, :introduction => "")
