@@ -1,3 +1,4 @@
+
 <%= form_with(model: card, local: true) do |form| %>
   <% if card.errors.any? %>
     <div id="error_explanation">
@@ -11,57 +12,77 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :reality %>
-    <%= form.number_field :reality %>
+  <div class="form-group row">
+    <%= form.label :reality, class:'col-2 col-form-label'%>
+    <div class="col-10">
+      <%= form.number_field :reality, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group row">
+    <%= form.label :name, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :name_kana %>
-    <%= form.text_field :name_kana %>
+  <div class="form-group row">
+    <%= form.label :name_kana, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.text_field :name_kana, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :character_id %>
-    <%= form.number_field :character_id %>
+  <div class="form-group row">
+    <%= form.label :character_id, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.number_field :character_id, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :capsule_id %>
-    <%= form.number_field :capsule_id %>
+  <div class="form-group row">
+    <%= form.label :capsule_id, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.number_field :capsule_id, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :element_id %>
-    <%= form.number_field :element_id %>
+  <div class="form-group row">
+    <%= form.label :element_id, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.number_field :element_id, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :performance %>
-    <%= form.number_field :performance %>
+  <div class="form-group row">
+    <%= form.label :performance, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.number_field :performance, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :technic %>
-    <%= form.number_field :technic %>
+  <div class="form-group row">
+    <%= form.label :technic, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.number_field :technic, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :visual %>
-    <%= form.number_field :visual %>
+  <div class="form-group row">
+    <%= form.label :visual, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.number_field :visual, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :introduction %>
-    <%= form.text_area :introduction %>
+  <div class="form-group row">
+    <%= form.label :introduction, class: 'col-2 col-form-label' %>
+    <div class="col-10">
+      <%= form.text_area :introduction, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
