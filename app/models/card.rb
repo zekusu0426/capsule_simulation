@@ -21,4 +21,5 @@ class Card < ApplicationRecord
   belongs_to :capsule
   belongs_to :character
   belongs_to :element
+  belongs_to :reality
 end

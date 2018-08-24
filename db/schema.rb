@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_104913) do
+ActiveRecord::Schema.define(version: 2018_08_24_074210) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_104913) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.integer "reality"
+    t.integer "reality_id"
     t.string "name"
     t.string "name_kana"
     t.integer "character_id"
@@ -88,6 +88,13 @@ ActiveRecord::Schema.define(version: 2018_07_16_104913) do
   create_table "elements", force: :cascade do |t|
     t.string "name"
     t.string "name_kana"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "realities", force: :cascade do |t|
+    t.string "name"
+    t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
