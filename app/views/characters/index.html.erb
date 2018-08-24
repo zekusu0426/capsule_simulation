@@ -53,9 +53,7 @@
   <% end %>
 </div>
 
-<% #バンド単位でGroup by %>
-<% @characters.group(:band_id).each do |b| %>
-  <% #バンド単位でLoop %>
+<% @characters.group("band_id").each do |b| %>
   <% @characters_band = @characters.where(band_id: b.band_id) %>
   <div class="row d-none d-md-block">
     <div class="col-md-12">
