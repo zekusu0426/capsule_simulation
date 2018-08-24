@@ -18,7 +18,7 @@ class CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all.order(:id)
+    @characters = Character.all
   end
 
   # GET /characters/1
