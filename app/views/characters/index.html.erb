@@ -53,7 +53,7 @@
   <% end %>
 </div>
 
-<% @characters.group("band_id").each do |b| %>
+<% @characters.select("band_id").group("band_id").each do |b| %>
   <% @characters_band = @characters.where(band_id: b.band_id) %>
   <div class="row d-none d-md-block">
     <div class="col-md-12">
