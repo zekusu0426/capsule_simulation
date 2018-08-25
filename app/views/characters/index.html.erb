@@ -53,14 +53,15 @@
   <% end %>
 </div>
 
+<!-- キャラクターカード(PC,tablet) -->
 <% @characters.select("band_id").group("band_id").order(:band_id).each do |b| %>
   <% @characters_band = @characters.where(band_id: b.band_id) %>
-  <div class="row d-none d-md-block">
-    <div class="col-md-12">
+  <div class="row d-none d-lg-block">
+    <div class="col-lg-12">
       <div class="row justify-content-center">
         <% #5列表示対応 %>
         <%  @characters_band.each do |character| %>
-        <div class="card col-md-2 m-1" data-toggle="modal" data-target="#Modal<%= character.id %>">
+        <div class="card col-lg-2 m-1" data-toggle="modal" data-target="#Modal<%= character.id %>">
           <%= image_tag 'sample.svg' %>
           <div class="card-body">
             <h5 class="card-title"><%= character.last_name + " " + character.first_name %></h5>
@@ -76,9 +77,9 @@
 
 <!-- タブレット・スマホ用 -->
 <%  @characters.each do |character| %>
-<div class="row m-1 justify-content-center">
-  <div class="col-md-12">
-    <div class="card d-block d-md-none" data-toggle="modal" data-target="#Modal<%= character.id %>">
+<div class="row m-1 justify-content-center d-block d-lg-none">
+  <div class="col-lg-12">
+    <div class="card" data-toggle="modal" data-target="#Modal<%= character.id %>">
       <%= image_tag('sample.svg', :class => "card-img-top", :alt => "") %>
       <div class="card-body">
         <h5 class="card-title"><%= character.last_name + " " + character.first_name %></h5>
