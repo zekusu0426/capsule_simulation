@@ -4,16 +4,21 @@
 <div class="row justify-content-center">
   <div class="jumbotron">
     <h1>Example</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.<div class="possession_rate"></div></p>
+    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+    <p class="possession_rate"></p>
+    <p class="selected_card"></p>
+    <p id="card-count" data-card-count="<%= @cards.count %>">現在の表示数：<%= @cards.count %></p>
     <a class="btn btn-lg btn-primary" href="" role="button">View navbar docs »</a>
   </div>
 </div>
+
+
 
 <!-- キャラクターカード一覧(モーダル) -->
 <div id="card_list">
   <% @characters.each do |character| %>
     <div class="modal fade" id="Modal<%= character.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel"><%= character.last_name + " " + character.first_name %></h5>

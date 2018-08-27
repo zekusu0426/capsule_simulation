@@ -19,6 +19,7 @@ class CharactersController < ApplicationController
   # GET /characters.json
   def index
     @characters = Character.all
+    @cards = Card.all
   end
 
   # GET /characters/1
