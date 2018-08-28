@@ -5,7 +5,7 @@
 $ ->
 	# console.log(cardTotal = $('#card-count').data("card-count"))
 	cardTotal = $('#card_list .card_checkbox input:checkbox').length
-
+	console.log(Date.now())
 	$('input:checkbox').on 'change', ->
 		cnt = $('#card_list .card_checkbox input:checkbox:checked').length
 		$('.possession_rate').text('所持率：' + Math.round(cnt*100*100/cardTotal)/100 + '％' )
