@@ -3,44 +3,41 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Cards</h1>
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Reality</th>
-      <th>Name</th>
-      <th>Name kana</th>
-      <th>Character</th>
-      <th>Capsule</th>
-      <th>Element</th>
-      <th>Performance</th>
-      <th>Technic</th>
-      <th>Visual</th>
-      <th>Introduction</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cards.each do |card| %>
+<div class="table-responsive">
+  <table class="table text-nowrap">
+    <thead>
       <tr>
-        <td><%= card.reality %></td>
-        <td><%= card.name %></td>
-        <td><%= card.name_kana %></td>
-        <td><%= card.character_id %></td>
-        <td><%= card.capsule_id %></td>
-        <td><%= card.element_id %></td>
-        <td><%= card.performance %></td>
-        <td><%= card.technic %></td>
-        <td><%= card.visual %></td>
-        <td><%= card.introduction %></td>
-        <td><%= link_to 'Show', card %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Reality</th>
+        <th>Name</th>
+        <th>Character</th>
+        <th>Capsule</th>
+        <th>Element</th>
+        <th>Performance</th>
+        <th>Technic</th>
+        <th>Visual</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @cards.each do |card| %>
+        <tr>
+          <td><%= card.reality.value %></td>
+          <td><%= card.name %></td>
+          <td><%= card.character.last_name + card.character.first_name %></td>
+          <td><%= card.capsule_id %></td>
+          <td><%= card.element_id %></td>
+          <td><%= card.performance %></td>
+          <td><%= card.technic %></td>
+          <td><%= card.visual %></td>
+          <td><%= link_to 'Show', card %></td>
+          <td><%= link_to 'Edit', edit_card_path(card) %></td>
+          <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <p class="count" data-num="100">0</p>
 <%= link_to 'New Card', new_card_path %>
