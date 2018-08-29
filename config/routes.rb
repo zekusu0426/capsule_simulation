@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :suggestions
   get 'top/index'
   resources :cards
   resources :capsules , only:[:index]
